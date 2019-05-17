@@ -4,7 +4,7 @@
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
-![Swift3.0](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
+![Swift5.0](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
 [![Build Status](https://travis-ci.org/pixyzehn/PathMenu.svg?branch=master)](https://travis-ci.org/pixyzehn/PathMenu)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
 )](http://mit-license.org)
