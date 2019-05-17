@@ -168,12 +168,12 @@ public class PathMenu: UIView {
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: Double(timeOffset), target: self, selector: selector, userInfo: nil, repeats: true)
             if let timer = timer {
-                RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
+                RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
             }
         }
     }
     
-    public func expand() {
+    @objc public func expand() {
         if flag == menuItems.count {
             timer?.invalidate()
             timer = nil
@@ -201,8 +201,8 @@ public class PathMenu: UIView {
         let animationgroup: CAAnimationGroup = CAAnimationGroup()
         animationgroup.animations = [positionAnimation, rotateAnimation]
         animationgroup.duration = CFTimeInterval(animationDuration)
-        animationgroup.fillMode = kCAFillModeForwards
-        animationgroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animationgroup.fillMode = CAMediaTimingFillMode.forwards
+        animationgroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         animationgroup.delegate = self
         
         if flag == menuItems.count - 1 {
@@ -215,7 +215,7 @@ public class PathMenu: UIView {
         flag += 1
     }
     
-    public func close() {
+    @objc public func close() {
         if flag == -1 {
             timer?.invalidate()
             timer = nil
@@ -241,8 +241,8 @@ public class PathMenu: UIView {
         let animationgroup = CAAnimationGroup()
         animationgroup.animations = [positionAnimation, rotateAnimation]
         animationgroup.duration = CFTimeInterval(animationDuration)
-        animationgroup.fillMode = kCAFillModeForwards
-        animationgroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animationgroup.fillMode = CAMediaTimingFillMode.forwards
+        animationgroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         animationgroup.delegate = self
 
         if flag == 0 {
@@ -313,7 +313,7 @@ public class PathMenu: UIView {
         let animationgroup = CAAnimationGroup()
         animationgroup.animations = [positionAnimation, scaleAnimation, opacityAnimation]
         animationgroup.duration = CFTimeInterval(animationDuration)
-        animationgroup.fillMode = kCAFillModeForwards
+        animationgroup.fillMode = CAMediaTimingFillMode.forwards
         
         return animationgroup
     }
@@ -332,7 +332,7 @@ public class PathMenu: UIView {
         let animationgroup = CAAnimationGroup()
         animationgroup.animations = [positionAnimation, scaleAnimation, opacityAnimation]
         animationgroup.duration = CFTimeInterval(animationDuration)
-        animationgroup.fillMode = kCAFillModeForwards
+        animationgroup.fillMode = CAMediaTimingFillMode.forwards
         
         return animationgroup
     }
